@@ -12,12 +12,18 @@ data MyList a = Cons a (MyList a)
 {-
 TESTING LISTS
 -}
+-- [1,2,3,4,5,6,7,8,9,0]
+l1 = Cons 1 $ Cons 2 $ Cons 3 $ Cons 4 $ Cons 5 $ Cons 6 $ Cons 7 $ Cons 8 $ Cons 9 $ Cons 0 $ Nil
 
-l1 = Cons 1 $ Cons 2 $ Cons 3 Cons 4 $ Cons 5 $ Cons 6 $ Cons 7 $ Cons 8 $ Cons 9 $ Cons 0 $ Nil
+-- [9,1,2,8,3,4,7,6,5,0]
+l2 = Cons 9 $ Cons 1 $ Cons 2 $ Cons 8 $ Cons 3 $ Cons 4 $ Cons 7 $ Cons 6 $ Cons 5 $ Cons 0 $ Nil
 
-l2 = Nil
+-- [90,91,102,81,3,104,1007,96,50,1000]
+l3 = Cons 90 $ Cons 91 $ Cons 102 $ Cons 81 $ Cons 3 $ Cons 104 $ Cons 1007 $ Cons 96 $ Cons 50 $ Cons 1000 $ Nil
 
-l3 = Cons 9 $ Cons 1 $ Cons 2 Cons 8 $ Cons 3 $ Cons 4 $ Cons 7 $ Cons 6 $ Cons 5 $ Cons 0 $ Nil
+
+-- []
+l4 = Nil
 
 -- Auxiliary Functions
 
