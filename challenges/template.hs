@@ -6,7 +6,7 @@ list [] or element with type t added to a head of a sequence
 of t typed elements.
 -}
 
-data MyList a = Cons a (MyList a) 
+data MyList a = Cons a (MyList a)
               | Nil deriving (Show, Eq)
 
 {-
@@ -67,7 +67,7 @@ Implement a function that, given a MyList, returns the same list reversed.
 TIP: Use myAppend function.
 -}
 myReverse :: MyList a -> MyList a
-myReverse = 
+myReverse =
 
 {-
 Implement a function that, given two MyLists, returns only one MyList which is the
@@ -94,7 +94,7 @@ TIP: Use the square function
 -}
 squares :: Num a => MyList a -> MyList a
 squares l =
-  
+
 {-
 Implement a function that, given a MyList of numbers, returns the same MyList with the
 numbers converted to strings.
@@ -249,3 +249,33 @@ myMaximum2 l =
 
 myMaximum2h :: (Num a, Ord a) => MyList a -> a
 myMaximum2h =
+
+
+
+-- MAYBE
+
+{-
+Maybe:
+Maybe type encapsulates optional value. A value of type Maybe a either contains a value
+of type a (represented as Just a), or it is empty (Represented as Nothing) -- Haskell.org definition
+
+The idea is to implement the functions above using Maybe in such way the Nil case do not raises an exception.
+-}
+
+{-
+Implement myHead so it return Just a or Nothing
+-}
+mHead :: MyList a -> Maybe a
+mHead l =
+
+{-
+Implement myTail so it return Just MyList or Nothing
+-}
+mTail :: MyList a -> Maybe (MyList a)
+mTail l =
+
+{-
+Implement myInit so it returns Just MyList or Nothin
+-}
+mInit :: MyList a -> Maybe (MyList a)
+mInit l =

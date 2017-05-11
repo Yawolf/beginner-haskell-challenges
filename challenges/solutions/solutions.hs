@@ -272,3 +272,33 @@ myMaximum2h = myFoldh (\x acc -> if x > acc then x else acc)
 
 
 -- TODO: Maybe!
+
+{-
+Maybe:
+Maybe type encapsulates optional value. A value of type Maybe a either contains a value
+of type a (represented as Just a), or it is empty (Represented as Nothing) -- Haskell.org definition
+
+The idea is to implement the functions above using Maybe in such way the Nil case do not raises an exception.
+-}
+
+{-
+Implement myHead so it return Just a or Nothing
+-}
+mHead :: MyList a -> Maybe a
+mHead Nil = Nothing
+mHead (Cons a _) = Just a
+
+{-
+ Implement myTail so it return Just MyList or Nothing
+-}
+mTail :: MyList a -> Maybe (MyList a)
+mTail Nil = Nothing
+mTail (Cons _ Nil) = Nothing
+mTail (Cons _ b) = Just b
+
+{-
+Implement myInit so it returns Just MyList or Nothin
+-}
+mInit :: MyList a -> Maybe (MyList a)
+mInit Nil = Nothing
+mInit l = Just (myInit l)
