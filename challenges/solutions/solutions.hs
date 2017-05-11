@@ -6,7 +6,7 @@ list [] or element with type t added to a head of a sequence
 of t typed elements.
 -}
 
-data MyList a = Cons a (MyList a) 
+data MyList a = Cons a (MyList a)
               | Nil deriving (Show, Eq)
 
 {-
@@ -18,7 +18,7 @@ l1 = Cons 1 $ Cons 2 $ Cons 3 $ Cons 4 $ Cons 5 $ Cons 6 $ Cons 7 $ Cons 8 $ Con
 -- [9,1,2,8,3,4,7,6,5,0]
 l2 = Cons 9 $ Cons 1 $ Cons 2 $ Cons 8 $ Cons 3 $ Cons 4 $ Cons 7 $ Cons 6 $ Cons 5 $ Cons 0 $ Nil
 
---
+ -- [90,91,102,81,3,104,1007,96,50,1000]
 l3 = Cons 90 $ Cons 91 $ Cons 102 $ Cons 81 $ Cons 3 $ Cons 104 $ Cons 1007 $ Cons 96 $ Cons 50 $ Cons 1000 $ Nil
 
 
@@ -38,9 +38,7 @@ myHead (Cons a _ ) = a
 Ignore the Nil MyList case
 -}
 myTail :: MyList a -> MyList a
-myTail (Cons a b) = myTail' b where
-  myTail' Nil = Nil
-  myTail' (Cons a b) = Cons a (myTail' b)
+myTail (Cons _ b) = b
 
 {- Implement a function that, given a MyList, returns the whole MyList but the last element.
 Ignore the Nil MyList case
@@ -55,13 +53,13 @@ Ignore the Nil MyList case.
 -}
 myLast :: MyList a -> a
 myLast (Cons a Nil) = a
-myLast (Cons _ b) = myLast b 
+myLast (Cons _ b) = myLast b
 
 {- implement a function that, given a MyList of t elements and a elemtn of type t,
 retruns a list whith the given MyList at the beginning and the element at the end
 -}
 myAppend :: MyList a -> a -> MyList a
-myAppend Nil e = Cons e $ Nil 
+myAppend Nil e = Cons e $ Nil
 myAppend (Cons a b) e = Cons a $ (myAppend b e)
 
 {-
@@ -185,7 +183,7 @@ myEvens2 :: MyList Integer -> MyList Integer
 myEvens2 = myFilter myEven
 
 {-
-Implement the myBigs function using myFilter 
+Implement the myBigs function using myFilter
 -}
 myBigs2 :: MyList Integer -> MyList Integer
 myBigs2 = myFilter myBig
@@ -216,7 +214,7 @@ Ignore the Nil case.
 myMaximum :: (Num a, Ord a) => MyList a -> a
 myMaximum l = myMaximum' l 0 where
   myMaximum' Nil acc = acc
-  myMaximum' (Cons a b) acc = if a > acc then myMaximum' b a else myMaximum' b acc 
+  myMaximum' (Cons a b) acc = if a > acc then myMaximum' b a else myMaximum' b acc
 
 {-
 myFold:
