@@ -8,7 +8,7 @@ The goalis to make undertand recursion an inmutability implementing
 the some of the most used functions is haskell such as map, filter or
 fold.
 
-The orginal idea was from @gramosg few years ago. He wrote the
+The orginal idea was from [@gramosg](https://github.com/gramosg) few years ago. He wrote the
 original problems in OCaml. I took those problems and translated them
 to Haskell, also I included some new problems and I pretend to include
 more.
